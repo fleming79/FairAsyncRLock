@@ -79,3 +79,7 @@ class FairAsyncRLock:
 
     async def __aexit__(self, exc_type, exc, tb):
         self.release()
+
+    def locked(self):
+        return self._count > 0
+
